@@ -3,7 +3,7 @@ import { useSafeAreaInsets} from 'react-native-safe-area-context';
 import Homescreen1 from '../components/Homescreen/Homescreen1';
 import Homescreen2 from '../components/Homescreen/Homescreen2';
 import Homescreen3 from '../components/Homescreen/Homescreen3';
-
+import Homescreen4 from '../components/Homescreen/Homescreen4';
 
 
 
@@ -23,6 +23,7 @@ const HomeScreen = () => {
           </View>
         </View>
         <Homescreen3/>
+        <Homescreen4/>
       </ScrollView>
     </>
   )
