@@ -4,7 +4,7 @@ import Homescreen1 from '../components/Homescreen/Homescreen1';
 import Homescreen2 from '../components/Homescreen/Homescreen2';
 import Homescreen3 from '../components/Homescreen/Homescreen3';
 import Homescreen4 from '../components/Homescreen/Homescreen4';
-
+import Homescreen5 from '../components/Homescreen/Homescreen5';
 
 
 const HomeScreen = () => {
@@ -24,6 +24,7 @@ const HomeScreen = () => {
         </View>
         <Homescreen3/>
         <Homescreen4/>
+        <Homescreen5/>
       </ScrollView>
     </>
   )
