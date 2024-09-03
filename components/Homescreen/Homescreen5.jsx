@@ -50,7 +50,7 @@ const Homescreen5 = () => {
             renderItem={({item}) => <Homescreen6 items={item}/>}
             keyExtractor={item => item.id}
             horizontal
-            pagingEnabled
+            showsHorizontalScrollIndicator={false}
         />
     </View>
   )

@@ -5,6 +5,7 @@ import Homescreen2 from '../components/Homescreen/Homescreen2';
 import Homescreen3 from '../components/Homescreen/Homescreen3';
 import Homescreen4 from '../components/Homescreen/Homescreen4';
 import Homescreen5 from '../components/Homescreen/Homescreen5';
+import Homescreen7 from '../components/Homescreen/Homescreen7';
 
 
 const HomeScreen = () => {
@@ -13,8 +14,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      {/* <StatusBar /> */}
-      <ScrollView style={styles.scrollview} contentContainerStyle={styles.containerStyle}>
+      <ScrollView style={styles.scrollview} contentContainerStyle={styles.containerStyle} showsVerticalScrollIndicator={false}>
         <View>
           <Image style={styles.image} source={require('../assets/images/main.png')}/>
           <View style={[styles.image,styles.overlay,{paddingTop:insets.top}]}>
@@ -25,6 +25,7 @@ const HomeScreen = () => {
         <Homescreen3/>
         <Homescreen4/>
         <Homescreen5/>
+        <Homescreen7/>
       </ScrollView>
     </>
   )
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor:"rgba(249, 249, 249, 1)"
   },
   containerStyle:{
-    flex:1,
+    // flex:1,
   },
   image:{
     width:"100%",
