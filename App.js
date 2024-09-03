@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import Tab_navigator from './navigators/Tab_navigator';
+import Stack_navigator from './navigators/Stack_navigator';
 import { useFonts } from 'expo-font';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -18,7 +18,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Tab_navigator/>
+        <Stack_navigator/>
       </NavigationContainer>
     </SafeAreaProvider>
   );

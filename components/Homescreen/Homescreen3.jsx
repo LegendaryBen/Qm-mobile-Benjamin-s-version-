@@ -1,8 +1,12 @@
 import { View, Text,StyleSheet,Image,TouchableOpacity } from 'react-native'
 import AntDesign from '@expo/vector-icons/AntDesign';
-
+import { useNavigation } from '@react-navigation/native';
 
 const Homescreen3 = () => {
+
+  const navigation = useNavigation()
+
+
   return (
     <View style={styles.container}>
       <View style={styles.showBox}>
@@ -25,7 +29,7 @@ const Homescreen3 = () => {
                 </View>
               </View>
               <View style={styles.joinBox}>
-                  <TouchableOpacity style={styles.joinButton}>
+                  <TouchableOpacity style={styles.joinButton} onPress={()=>navigation.navigate("Questions")}>
                     <Text style={styles.joinButtonText}>Join Game</Text>
                   </TouchableOpacity>
                   <Text style={styles.entryText}>Entry Fee ₦100.00</Text>
