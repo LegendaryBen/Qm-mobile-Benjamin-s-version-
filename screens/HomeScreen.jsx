@@ -1,8 +1,8 @@
 import { View, Text,ScrollView,StyleSheet,Image,StatusBar} from 'react-native'
 import { useSafeAreaInsets} from 'react-native-safe-area-context';
 import Homescreen1 from '../components/Homescreen/Homescreen1';
-
-
+import Homescreen2 from '../components/Homescreen/Homescreen2';
+import Homescreen3 from '../components/Homescreen/Homescreen3';
 
 
 
@@ -19,8 +19,10 @@ const HomeScreen = () => {
           <Image style={styles.image} source={require('../assets/images/main.png')}/>
           <View style={[styles.image,styles.overlay,{paddingTop:insets.top}]}>
               <Homescreen1/>
+              <Homescreen2/>
           </View>
         </View>
+        <Homescreen3/>
       </ScrollView>
     </>
   )
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius:100
   },
   overlay:{
-    backgroundColor:"rgba(35, 100, 170,0.5)",
+    backgroundColor:"rgba(35, 100, 170,0.8)",
     position:"absolute",
     top:0
   }
