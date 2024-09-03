@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     scoreboard:{
         width:"100%",
         minHeight:76,
-        backgroundColor:"white",
+        backgroundColor:"rgba(223, 249, 255, 1)",
         borderRadius:10,
         borderWidth:4,
         borderColor:"rgba(0, 203, 247, 1)",
