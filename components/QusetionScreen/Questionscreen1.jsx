@@ -65,7 +65,7 @@ const Questionscreen1 = ({result}) => {
 
       if( checker.current > result.length - 1){
         clearInterval(timer.current);
-        navigation.navigate('Answer',{
+        navigation.push('Answer',{
           passed:good.current >= bad.current,
           good:good.current,
           bad:bad.current

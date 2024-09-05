@@ -6,11 +6,22 @@ import Homescreen3 from '../components/Homescreen/Homescreen3';
 import Homescreen4 from '../components/Homescreen/Homescreen4';
 import Homescreen5 from '../components/Homescreen/Homescreen5';
 import Homescreen7 from '../components/Homescreen/Homescreen7';
+import { useEffect } from 'react';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
 
   const insets = useSafeAreaInsets();
+
+
+  useEffect(()=>{
+
+    navigation.addListener('beforeRemove', (e) => {
+      e.preventDefault();
+    })
+ 
+
+  },[])
 
   return (
     <>

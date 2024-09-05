@@ -29,7 +29,7 @@ const Homescreen3 = () => {
                 </View>
               </View>
               <View style={styles.joinBox}>
-                  <TouchableOpacity style={styles.joinButton} onPress={()=>navigation.navigate("Questions")}>
+                  <TouchableOpacity style={styles.joinButton} onPress={()=>navigation.push("Questions")}>
                     <Text style={styles.joinButtonText}>Join Game</Text>
                   </TouchableOpacity>
                   <Text style={styles.entryText}>Entry Fee ₦100.00</Text>

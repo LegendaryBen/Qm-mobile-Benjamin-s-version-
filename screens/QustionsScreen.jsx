@@ -74,15 +74,15 @@ const QustionsScreen = ({navigation}) => {
   const[goBack,setGoBack] = useState(false);
 
   useEffect(()=>{
+    
+      if(goBack == false){
 
-    if(goBack == false){
-
-      navigation.addListener('beforeRemove', (e) => {
-        e.preventDefault();
-      })
-
-    }
-   
+        navigation.addListener('beforeRemove', (e) => {
+          e.preventDefault();
+        })
+    
+      }
+     
     fetchData()
  
   },[])
@@ -124,7 +124,7 @@ const QustionsScreen = ({navigation}) => {
     return (
       <ImageBackground style={styles.container} source={require('../assets/images/background.jpg')}>
         <ScrollView style={styles.scrollview} showsVerticalScrollIndicator={false}>
-          <LoadingData retry={fetchData}/>
+          <LoadingData retry={fetchData} func={setGoBack}/>
         </ScrollView>
       </ImageBackground>
     )

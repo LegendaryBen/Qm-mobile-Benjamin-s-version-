@@ -5,12 +5,13 @@ import Answerscreen2 from '../components/Answerscreen/Answerscreen2';
 import Answerscreen3 from '../components/Answerscreen/Answerscreen3';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 
+const AnswerScreen = (props) => {
 
-const AnswerScreen = ({navigation,route}) => {
-
-  const{passed,good,bad} = route.params;
+  const{passed,good,bad} = props.route.params;
+  const navigation = useNavigation()
 
   const insets = useSafeAreaInsets();
 
@@ -32,7 +33,9 @@ const AnswerScreen = ({navigation,route}) => {
           <Answerscreen3 passed={passed}/>
         </View>
         <View style={styles.homeBtn}>
-            <TouchableOpacity style={styles.click} onPress={()=>{navigation.navigate("TabHome")}}>
+            <TouchableOpacity style={styles.click} onPress={()=>{
+              navigation.push("TabHome")
+            }}>
               <Text style={styles.clickText}>Go Home</Text>
             </TouchableOpacity>
             
