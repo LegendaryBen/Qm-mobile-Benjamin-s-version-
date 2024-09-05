@@ -9,9 +9,9 @@ const Stack = createNativeStackNavigator();
 function Stack_navigator() {
   return (
     <Stack.Navigator screenOptions={{headerShown:false}}>
-      <Stack.Screen name="Answer" component={AnswerScreen} />
       <Stack.Screen name="TabHome" component={Tab_navigator} />
       <Stack.Screen name="Questions" component={QustionsScreen} />
+      <Stack.Screen name="Answer" component={AnswerScreen} />
     </Stack.Navigator>
   );
 }

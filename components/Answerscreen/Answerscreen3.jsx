@@ -3,15 +3,21 @@ import { useRef,useEffect } from 'react'
 import LottieView from 'lottie-react-native';
 
 
-const Answerscreen3 = () => {
+const Answerscreen3 = ({passed}) => {
 
     const animation1 = useRef(null);
-    // const animation2 = useRef(null);
-
+    const animation2 = useRef(null);
 
     useEffect(() => {
-        animation1.current?.play();
-        // animation2.current?.play();
+
+        if(passed == true){
+            animation1.current?.play();
+        }
+       
+        if(passed == false){
+            animation2.current?.play();
+        }
+
     }, []);
     
 
@@ -19,7 +25,7 @@ const Answerscreen3 = () => {
     <View style={styles.container}>
       <View style={styles.emojiBox}>
         <View style={styles.smileBox}>
-            <LottieView
+            {passed == true && <LottieView
                 autoPlay
                 ref={animation1}
                 style={{
@@ -29,7 +35,8 @@ const Answerscreen3 = () => {
                 }}
                 source={require('../../assets/emojis/pass.json')}
             />
-            {/* <LottieView
+            }
+            {passed == false && <LottieView
                 autoPlay
                 ref={animation2}
                 style={{
@@ -38,11 +45,12 @@ const Answerscreen3 = () => {
                 backgroundColor: 'transparent',
                 }}
                 source={require('../../assets/emojis/fail.json')}
-            /> */}
+            />
+            }
         </View>
         <Text style={styles.luck}>Better luck next time</Text>
-        <Text style={styles.youWin}>Congratulations You Won 🎉</Text>
-        {/* <Text style={styles.youWin}>Sorry you Didn’t win</Text> */}
+        {passed == true && <Text style={styles.youWin}>Congratulations You Won 🎉</Text>}
+        {passed == false &&<Text style={styles.youWin}>Sorry you Didn’t win</Text>}
       </View>
     </View>
   )

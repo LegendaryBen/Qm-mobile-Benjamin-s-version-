@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     showBox:{
         width:"100%",
         height:246,
-        backgroundColor:"blue",
         position:"absolute",
         top:"-100%",
         borderRadius:20,

@@ -4,13 +4,23 @@ import Answerscreen1 from '../components/Answerscreen/Answerscreen1';
 import Answerscreen2 from '../components/Answerscreen/Answerscreen2';
 import Answerscreen3 from '../components/Answerscreen/Answerscreen3';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useEffect } from 'react';
 
 
 
+const AnswerScreen = ({navigation,route}) => {
 
-const AnswerScreen = () => {
+  const{passed,good,bad} = route.params;
 
   const insets = useSafeAreaInsets();
+
+  useEffect(()=>{
+
+    navigation.addListener('beforeRemove', (e) => {
+      e.preventDefault();
+    })
+
+  },[])
 
 
   return (
@@ -18,11 +28,11 @@ const AnswerScreen = () => {
       <ScrollView style={styles.scrollview}>
         <View style={{paddingTop:insets.top}}>
           <Answerscreen1/>
-          <Answerscreen2/>
-          <Answerscreen3/>
+          <Answerscreen2 good1={good} bad1={bad}/>
+          <Answerscreen3 passed={passed}/>
         </View>
         <View style={styles.homeBtn}>
-            <TouchableOpacity style={styles.click}>
+            <TouchableOpacity style={styles.click} onPress={()=>{navigation.navigate("TabHome")}}>
               <Text style={styles.clickText}>Go Home</Text>
             </TouchableOpacity>
             

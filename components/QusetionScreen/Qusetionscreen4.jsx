@@ -4,17 +4,17 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 
 
-const Qusetionscreen4 = () => {
+const Qusetionscreen4 = ({obj,letter,questionId,selectAnswer,pressed,correct,id}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={[styles.answer,{backgroundColor:'#009028',borderWidth:4,borderColor:"#00EA62"},{backgroundColor:"#C30012",borderWidth:4,borderColor:"#F69798"}]}> 
-        <Text style={styles.answerMark}>A.</Text>
+      <TouchableOpacity onPress={()=>{selectAnswer(id,obj.item)}} style={[styles.answer, pressed.current == true && correct.current == true && questionId.current == id && {backgroundColor:'#009028',borderWidth:4,borderColor:"#00EA62"}, pressed.current == true && correct.current == false && questionId.current == id && {backgroundColor:"#C30012",borderWidth:4,borderColor:"#F69798"}]}> 
+        <Text style={styles.answerMark}>{letter}.</Text>
         <View style={styles.pickBox}>
-            <Text style={styles.pickAnswer}>George Washington</Text>
+            <Text style={styles.pickAnswer}>{obj.item}</Text>
         </View>
         <View>
-            <MaterialIcons name="cancel" size={24} color="#FFCBD2" />
-            {/* <Ionicons name="checkmark-circle" size={24} color="#62F694" /> */}
+            {pressed.current == true && correct.current == false && questionId.current == id && <MaterialIcons name="cancel" size={24} color="#FFCBD2" />}
+            {pressed.current == true && correct.current == true && questionId.current == id && <Ionicons name="checkmark-circle" size={24} color="#62F694" />}
         </View>
       </TouchableOpacity>
     </View>

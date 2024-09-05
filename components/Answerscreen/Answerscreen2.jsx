@@ -2,18 +2,19 @@ import { View, Text,StyleSheet } from 'react-native'
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 
-const Answerscreen2 = () => {
+const Answerscreen2 = ({good1,bad1}) => {
+
   return (
     <View style={styles.container}>
         <View style={styles.scoreboard}>
             <Text style={styles.totalTime}>Total Time Used: 01:00</Text>
             <View style={styles.passBoard}>
                 <View style={[styles.good,{paddingRight:10,borderRightWidth:1,borderRightColor:"black"}]}>
-                    <Text style={[{marginRight:10},styles.goodText]}>10 Correct</Text>
+                    <Text style={[{marginRight:10},styles.goodText]}>{good1} Correct</Text>
                     <AntDesign name="checkcircle" size={24} color="rgba(0, 196, 73, 1)" />
                 </View>
                 <View style={[styles.good,{paddingLeft:10}]}>
-                    <Text style={[{marginRight:10},styles.goodText]}>0 Incorrect</Text>
+                    <Text style={[{marginRight:10},styles.goodText]}>{bad1} Incorrect</Text>
                     <AntDesign name="closecircle" size={24} color="rgba(249, 71, 75, 1)" />
                 </View>
             </View>

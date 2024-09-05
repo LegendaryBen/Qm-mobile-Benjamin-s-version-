@@ -1,12 +1,12 @@
 import { View, Text,StyleSheet } from 'react-native'
 import React from 'react'
 
-const Questionscreen3 = () => {
+const Questionscreen3 = ({tracker,obj}) => {
   return (
     <View style={styles.container}>
       <View style={styles.questionBox}>
-        <Text style={styles.question}>Question 1</Text>
-        <Text style={styles.mainQuestion}>Who was the First President of the United States ?</Text>
+        <Text style={styles.question}>Question {tracker+1}</Text>
+        <Text style={styles.mainQuestion}>{obj.question}</Text>
       </View>
     </View>
   )
